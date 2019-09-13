@@ -9,7 +9,9 @@ public class Main {
         orElseOptional("pipe");
         orElseOptional(null);
         orElseThrow("pipe1");
-        orElseThrow(null);
+        //orElseThrow(null);
+        isPresent("pipe2");
+        isPresent(null);
     }
 
     public static void probarOptional(String nombre) {
@@ -32,5 +34,10 @@ public class Main {
         optional.orElseThrow(IllegalArgumentException::new);
         String nombre1 = optional.get();
         System.out.println(nombre1);
+    }
+
+    public static void isPresent(String nombre) {
+        Optional<String> optional = Optional.ofNullable(nombre);
+        System.out.println(optional.isPresent());
     }
 }
