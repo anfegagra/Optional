@@ -8,6 +8,8 @@ public class Main {
         //probarOptional(null);
         orElseOptional("pipe");
         orElseOptional(null);
+        orElseThrow("pipe1");
+        orElseThrow(null);
     }
 
     public static void probarOptional(String nombre) {
@@ -23,5 +25,12 @@ public class Main {
         Optional<String> optional = Optional.ofNullable(nombre);
         String nombreOfNullable = optional.orElse("Vacio");
         System.out.println(nombreOfNullable);
+    }
+
+    public static void orElseThrow(String nombre) {
+        Optional<String> optional = Optional.ofNullable(nombre);
+        optional.orElseThrow(IllegalArgumentException::new);
+        String nombre1 = optional.get();
+        System.out.println(nombre1);
     }
 }
